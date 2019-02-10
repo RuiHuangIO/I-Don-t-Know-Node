@@ -9,7 +9,7 @@
     "prod": "node ./start.js",
     "watch": "nodemon ./start.js --ignore public/",
     "start": "concurrently \"npm run watch\" \"npm run assets\" --names \"💻,📦\" --prefix name",
-    "assets": "webpack -w --display-max-modules 0",
+    "assets": "webpack -w --display-max-modules --display-error-details",
     "sample": "node ./data/load-sample-data.js",
     "blowitallaway": "node ./data/load-sample-data.js --delete",
     "now": "now -e DB_USER=@db_user -e DB_PASS=@db_pass -e NODE_ENV=\"production\" -e PORT=80"
@@ -35,7 +35,7 @@
     "juice": "5.1.0",
     "md5": "2.2.1",
     "moment": "2.24.0",
-    "mongoose": "5.4.9",
+    "mongoose": "5.4.11",
     "mongoose-mongodb-errors": "0.0.2",
     "multer": "1.4.1",
     "nodemailer": "5.1.1",
@@ -48,19 +48,21 @@
     "validator": "10.11.0"
   },
   "devDependencies": {
+    "@babel/core": "^7.2.2",
+    "@babel/preset-env": "^7.3.1",
     "autoprefixer": "9.4.7",
-    "babel-core": "6.26.3",
     "babel-loader": "8.0.5",
-    "babel-preset-env": "^1.6.0",
     "concurrently": "4.1.0",
     "css-loader": "2.1.0",
-    "extract-text-webpack-plugin": "3.0.2",
+    "extract-text-webpack-plugin": "^4.0.0-beta.0",
+    "mini-css-extract-plugin": "^0.5.0",
     "node-sass": "^4.7.2",
     "nodemon": "^1.18.3",
     "now": "^13.1.2",
     "postcss-loader": "3.0.0",
     "sass-loader": "7.1.0",
-    "webpack": "4.29.0",
+    "terser-webpack-plugin": "^1.2.2",
+    "webpack": "4.29.3",
     "webpack-cli": "^3.2.1"
   }
 }
